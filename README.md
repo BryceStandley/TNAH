@@ -1,57 +1,94 @@
-![TNAH-Logo](/resources/logo/logo.png)
+<p align="center">
+    <img src="./resources/readme/logo/logo.png" alt="TNAH-Logo" width="200" height="90"/>
+</p>
 
-# TNAH
-![Build Status](https://github.com/BryceStandley/TNAH/actions/workflows/Windows.yml/badge.svg)
-![Build Status](https://github.com/BryceStandley/TNAH/actions/workflows/Mac.yml/badge.svg)
-![Build Status](https://github.com/BryceStandley/TNAH/actions/workflows/Linux.yml/badge.svg)
-The TNAH is a game engine written in C++ targeting OpenGL 4.6. The TNAH name stands for **T**eam **N**ames **A**re **H**ard. 
-The name is a continuation of our group name during the development of the engine for university.
+<p align="center">
+<a href="https://github.com/BryceStandley/TNAH/actions/workflows/Windows.yml">
+    <img src="https://github.com/BryceStandley/TNAH/actions/workflows/Windows.yml/badge.svg" alt="Windows-Build-Status"/>
+</a>
+<a href="https://github.com/BryceStandley/TNAH/actions/workflows/Mac.yml">
+    <img src="https://github.com/BryceStandley/TNAH/actions/workflows/Mac.yml/badge.svg" alt="Mac-Build-Status"/>
+</a>
+<a href="https://github.com/BryceStandley/TNAH/actions/workflows/Linux.yml">
+    <img src="https://github.com/BryceStandley/TNAH/actions/workflows/Linux.yml/badge.svg" alt="Linux-Build-Status"/>
+</a>
+</p>
+
+#
+
+<p align="center">
+    <a href="https://github.com/BryceStandley/TNAH/wiki/">Wiki</a> •
+    <a href="#">Documentation</a> •
+    <a href="https://github.com/BryceStandley/TNAH/wiki/Build">Build</a> •
+    <a href="#dependencies">Dependencies</a> •
+    <a href="https://github.com/BryceStandley/TNAH/LICENSE">License</a>
+</p>
+
+#
+
+## About
+
+TNAH is a game engine written in C++ targeting OpenGL 4.6. The TNAH name stands for ***T***eam ***N***ames ***A***re ***H***ard and is a continuation of the group name used during the development of the engine for university.
 
 ## History
-This project originally started development in early 2021 as a university project but has since become a passion project moving forward.
-To view the original version of this engine visit the original git --> [TNAH-Engine](https://github.com/BryceStandley/TNAH-Engine)
+
+This project originally started development in early 2021 as a university project but has since become a passion project moving forward. To view the original version of this engine visit our [original repo TNAH-Engine](https://github.com/BryceStandley/TNAH-Engine)
 
 ## Wiki
-Visit the [wiki](https://github.com/BryceStandley/TNAH/wiki) to read up on example applications!
-You can also visit our [documentation](https://github.com/BryceStandley/TNAH) to view our [Doxygen](https://www.doxygen.nl/index.html) output.
+
+Visit the [wiki](https://github.com/BryceStandley/TNAH/wiki) to read up on example applications, build instructions and much more! You can also visit our [Documentaion](https://github.com/BryceStandley/TNAH) page to view our [Doxygen](https://www.doxygen.nl/index.html) generated output.
 
 ## LFS
-Ensure git lfs is installed on your system prior to cloning.
-```git lfs install```
+
+Ensure git lfs is installed on your system prior to cloning. Head over to the [LFS](https://git-lfs.github.com/) github page to learn more about installing git lfs. Once installed on your machine, use:
+
+```bash
+git lfs install
+```
 
 ## Cloning
-``` git clone https://github.com/BryceStandley/TNAH.git```
-``` cd TNAH ```
 
-### Optional
-If you would like to use the most up-to-date version of the engine, use:
-``` git checkout dev```
-or the default main branch will be used.
+1. ```bash
+    git clone https://github.com/BryceStandley/TNAH.git
+    ```
 
-### Sub-modules
-TNAH uses sub-modules for its dependencies, use:
-``` git submodule update --init --recursive --depth 1 ```
+2. ```bash
+    cd TNAH
+    ```
+
+3. If you would like to use the most up-to-date but possibly unstable version of the engine, use:
+  
+   ```bash
+        git checkout dev
+    ```
+
+    ***Note*** The dev branch is a **unstable** work-in-progress. __Advanced experience is advised!__
+
+4. ```bash
+    git submodule update --init --recursive --depth 1
+    ```
 
 ## Building
-Cmake is used to build the engine and its modules.
-### TODO -- Add cmake instructions
-#### Windows
-#### Mac
-#### Linux
+
+Cmake is used to build the engine and its modules. Head over to the [Build](/wiki/Build) section of the [Wiki](/wiki/) to learn about how to build the engine from source!
+
 ## Work In Progress
+
 The TNAH engine is an ongoing development project which will see additions of may different components and models.
 
 ## Dependencies
-- Assimp (3D mesh loading) [Git](https://github.com/assimp/assimp)
-- Entt (Entity Component System) [Git](https://github.com/skypjack/entt)
-- GLFW (OpenGl Window Management) [Git](https://github.com/glfw/glfw)
-- GLM (3D Math Library) [Git](https://github.com/g-truc/glm)
-- ImGui (GUI Library) [Git](https://github.com/ocornut/imgui)
-- ImGuizmo (Gizmo ImGui Addon) [Git](https://github.com/CedricGuillemet/ImGuizmo)
-- KTX-Software (KTX(1 and 2) Texture Loader) [Git](https://github.com/KhronosGroup/KTX-Software)
-- Miniaudio (2D Audio Library) [Git](https://github.com/mackron/miniaudio)
-- ReactPhysics3D (3D Physics and Collision Library) [Git](https://github.com/DanielChappuis/reactphysics3d)
-- SPDLOG (Logger) [Git](https://github.com/gabime/spdlog)
+
+- [Assimp](https://github.com/assimp/assimp) (3D Model/Mesh Loading Library)
+- [Entt](https://github.com/skypjack/entt) (Entity Component System Library)
+- [GLFW](https://github.com/glfw/glfw) (Window Management Library)
+- [GLM](https://github.com/g-truc/glm) (3D Math Library)
+- [ImGui](https://github.com/ocornut/imgui) (GUI Library)
+- [ImGuizmo](https://github.com/CedricGuillemet/ImGuizmo) (Gizmo ImGui Addon)
+- [KTX-Software](https://github.com/KhronosGroup/KTX-Software) (KTX Texture Loader)
+- [Miniaudio](https://github.com/mackron/miniaudio) (2D Audio Library)
+- [ReactPhysics3D](https://github.com/DanielChappuis/reactphysics3d) (3D Physics/Collision Library)
+- [SPDLOG](https://github.com/gabime/spdlog) (Console Logger Library)
 
 ## License
+
 This project is licensed under the MIT license. Please refer to the [License](/LICENSE) file for details.
