@@ -18,7 +18,7 @@
 
 <p align="center">
     <a href="https://github.com/BryceStandley/TNAH/wiki/">Wiki</a> •
-    <a href="#">Documentation</a> •
+    <a href="https://brycestandley.github.io/TNAH/">Documentation</a> •
     <a href="https://github.com/BryceStandley/TNAH/wiki/Build">Build</a> •
     <a href="#dependencies">Dependencies</a> •
     <a href="https://github.com/BryceStandley/TNAH/LICENSE">License</a>
@@ -36,7 +36,7 @@ This project originally started development in early 2021 as a university projec
 
 ## Wiki
 
-Visit the [wiki](https://github.com/BryceStandley/TNAH/wiki) to read up on example applications, build instructions and much more! You can also visit our [Documentaion](https://github.com/BryceStandley/TNAH) page to view our [Doxygen](https://www.doxygen.nl/index.html) generated output.
+Visit the [wiki](https://github.com/BryceStandley/TNAH/wiki) to read up on example applications, build instructions and much more! You can also visit our [Documentaion](https://brycestandley.github.io/TNAH/) page to view our [Doxygen](https://www.doxygen.nl/index.html) generated output.
 
 ## LFS
 
