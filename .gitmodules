@@ -1,0 +1,31 @@
+[submodule "vender/glm"]
+	path = vender/glm
+	url = https://github.com/g-truc/glm.git
+[submodule "vender/glfw"]
+	path = vender/glfw
+	url = https://github.com/glfw/glfw.git
+[submodule "vender/reactphysics3d"]
+	path = vender/reactphysics3d
+	url = https://github.com/DanielChappuis/reactphysics3d.git
+	branch = develop
+[submodule "vender/imgui"]
+	path = vender/imgui
+	url = https://github.com/ocornut/imgui.git
+[submodule "vender/ImGuizmo"]
+	path = vender/ImGuizmo
+	url = https://github.com/CedricGuillemet/ImGuizmo.git
+[submodule "vender/assimp"]
+	path = vender/assimp
+	url = https://github.com/assimp/assimp.git
+[submodule "vender/entt"]
+	path = vender/entt
+	url = https://github.com/skypjack/entt.git
+[submodule "vender/spdlog"]
+	path = vender/spdlog
+	url = https://github.com/gabime/spdlog.git
+[submodule "vender/ktx"]
+	path = vender/ktx
+	url = https://github.com/KhronosGroup/KTX-Software.git
+[submodule "vender/miniaudio"]
+	path = vender/miniaudio
+	url = https://github.com/mackron/miniaudio.git
