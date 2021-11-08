@@ -1,9 +1,9 @@
 ![TNAH-Logo](/resources/logo/logo.png)
 
 # TNAH
-[![Build Status](https://github.com/BryceStandley/TNAH/workflows/Windows/badge.svg)](https://github.com/BryceStandley/TNAH/actions/workflows/Windows.yml)
-[![Build Status](https://github.com/BryceStandley/TNAH/workflows/Mac/badge.svg)](https://github.com/BryceStandley/TNAH/actions/workflows/Windows.yml)
-[![Build Status](https://github.com/BryceStandley/TNAH/workflows/Linux/badge.svg)](https://github.com/BryceStandley/TNAH/actions/workflows/Windows.yml)
+![Build Status](/actions/workflows/Windows.yml/badge.svg)
+![Build Status](/actions/workflows/Mac.yml/badge.svg)
+![Build Status](/actions/workflows/Linux.yml/badge.svg)
 The TNAH is a game engine written in C++ targeting OpenGL 4.6. The TNAH name stands for **T**eam **N**ames **A**re **H**ard. 
 The name is a continuation of our group name during the development of the engine for university.
 
