@@ -16,3 +16,15 @@
 [submodule "vendor/miniaudio"]
 	path = vendor/miniaudio
 	url = https://github.com/mackron/miniaudio.git
+[submodule "vendor/imgui-base/imgui"]
+	path = vendor/imgui-base/imgui
+	url = https://github.com/ocornut/imgui.git
+[submodule "vendor/ImGuizmo-base/ImGuizmo"]
+	path = vendor/ImGuizmo-base/ImGuizmo
+	url = https://github.com/CedricGuillemet/ImGuizmo.git
+[submodule "vendor/spdlog"]
+	path = vendor/spdlog
+	url = https://github.com/gabime/spdlog.git
+[submodule "vendor/reactphysics3d"]
+	path = vendor/reactphysics3d
+	url = https://github.com/DanielChappuis/reactphysics3d.git
