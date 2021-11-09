@@ -4,7 +4,7 @@
 
 #pragma warning(pop)
 
-#include <entt.hpp>
+#include <entt/entt.hpp>
 
 #include "CollisionDetectionEngine.h"
 #include "PhysicsStructures.h"

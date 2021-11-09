@@ -3,7 +3,7 @@
 #include "Components/Components.h"
 #include "Scene.h"
 #pragma warning(push, 0)
-#include "entt.hpp"
+#include <entt/entt.hpp>
 #pragma warning(pop)
 
 namespace tnah {

@@ -1,7 +1,6 @@
 #include "tnahpch.h"
 #include "TNAH/Renderer/Shader.h"
 
-#include <entt.hpp>
 
 #include "TNAH/Renderer/Renderer.h"
 #include "Platform/OpenGL/OpenGLShader.h"

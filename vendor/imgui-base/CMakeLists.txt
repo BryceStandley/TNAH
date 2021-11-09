@@ -1,3 +1,4 @@
+message("imgui started")
 project(imgui)
 
 add_library(imgui STATIC)
@@ -16,3 +17,5 @@ target_compile_options(imgui PRIVATE -fPIC)
 
 target_include_directories(imgui PUBLIC . imgui)
 target_link_libraries(imgui PRIVATE glfw glad ${APP_SERVICES_LIBRARY} ${COCOA_LIBRARY})
+
+message("imgui ended")

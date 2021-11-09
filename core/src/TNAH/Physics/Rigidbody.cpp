@@ -120,7 +120,7 @@ namespace tnah::Physics {
 	glm::vec3 RigidBody::CalculateLocalInertiaTensor()
 	{
 		auto localCOM = m_BodyMass.LocalCentreOfMass;
-		glm::mat3 tempLocalInertiaTensor = glm::mat3(1.0f);
+		glm::mat3 tempLocalInertiaTensor = glm::mat3(0.0f);
 
 		// calc inertia tensor using colliders
 		for(auto c : m_Colliders)
@@ -172,6 +172,7 @@ namespace tnah::Physics {
 		if(totalMass > 0.0f)
 		{
 			m_BodyMass.SetMass(totalMass);
+			localCOM /= totalMass;
 		}
 
 		m_BodyMass.LocalCentreOfMass = localCOM;
