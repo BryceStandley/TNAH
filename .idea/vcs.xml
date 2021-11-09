@@ -1,0 +1,22 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<project version="4">
+  <component name="VcsDirectoryMappings">
+    <mapping directory="$PROJECT_DIR$" vcs="Git" />
+    <mapping directory="$PROJECT_DIR$/vendor/ImGuizmo/ImGuizmo" vcs="Git" />
+    <mapping directory="$PROJECT_DIR$/vendor/assimp" vcs="Git" />
+    <mapping directory="$PROJECT_DIR$/vendor/entt" vcs="Git" />
+    <mapping directory="$PROJECT_DIR$/vendor/glfw" vcs="Git" />
+    <mapping directory="$PROJECT_DIR$/vendor/glm" vcs="Git" />
+    <mapping directory="$PROJECT_DIR$/vendor/imgui/imgui" vcs="Git" />
+    <mapping directory="$PROJECT_DIR$/vendor/ktx" vcs="Git" />
+    <mapping directory="$PROJECT_DIR$/vendor/miniaudio" vcs="Git" />
+    <mapping directory="$PROJECT_DIR$/vendor/reactphysics3d" vcs="Git" />
+    <mapping directory="$PROJECT_DIR$/vendor/reactphysics3d/testbed/extern/nanogui" vcs="Git" />
+    <mapping directory="$PROJECT_DIR$/vendor/reactphysics3d/testbed/extern/nanogui/ext/glfw" vcs="Git" />
+    <mapping directory="$PROJECT_DIR$/vendor/reactphysics3d/testbed/extern/nanogui/ext/nanovg" vcs="Git" />
+    <mapping directory="$PROJECT_DIR$/vendor/reactphysics3d/testbed/extern/nanogui/ext/nanovg_metal" vcs="Git" />
+    <mapping directory="$PROJECT_DIR$/vendor/reactphysics3d/testbed/extern/nanogui/ext/pybind11" vcs="Git" />
+    <mapping directory="$PROJECT_DIR$/vendor/reactphysics3d/testbed/extern/nanogui/ext/pybind11/tools/clang" vcs="Git" />
+    <mapping directory="$PROJECT_DIR$/vendor/spdlog" vcs="Git" />
+  </component>
+</project>
