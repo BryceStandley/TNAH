@@ -1,9 +1,13 @@
 ﻿#include "tnahpch.h"
 #include "Audio.h"
 
+//#include "Platform/IrrKlang/Klang.h"
+//#include "Platform/MiniAudio/MiniAudio.h"
+
 namespace tnah
 {
-    AudioAPI * Audio::m_AudioEngine = new Klang();
+    //AudioAPI * Audio::m_AudioEngine = new Klang();
+    AudioAPI* Audio::m_AudioEngine = new MiniAudio();
 
     void Audio::Shutdown()
     {

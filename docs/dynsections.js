@@ -53,7 +53,7 @@ function toggleLevel(level)
 {
   $('table.directory tr').each(function() {
     var l = this.id.split('_').length-1;
-    var i = $('#img'+this.id.substring(3));
+    var i = $('#imgui'+this.id.substring(3));
     var a = $('#arr'+this.id.substring(3));
     if (l<level+1) {
       i.removeClass('iconfopen iconfclosed').addClass('iconfopen');
@@ -108,7 +108,7 @@ function toggleFolder(id)
 function toggleInherit(id)
 {
   var rows = $('tr.inherit.'+id);
-  var img = $('tr.inherit_header.'+id+' img');
+  var img = $('tr.inherit_header.'+id+' imgui');
   var src = $(img).attr('src');
   if (rows.filter(':first').is(':visible')===true) {
     rows.css('display','none');

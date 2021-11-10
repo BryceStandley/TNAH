@@ -1,7 +1,7 @@
 #pragma once
 #define USE_MATH_DEFINES
 
-#include <TNAH/Core/Core.h>
+#include "TNAH/Core/Core.h"
 #pragma warning(push, 0)
 #define GLM_ENABLE_EXPERIMENTAL
 #include <glm/gtx/matrix_decompose.hpp>

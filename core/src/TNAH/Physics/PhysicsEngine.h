@@ -4,7 +4,7 @@
 
 #pragma warning(pop)
 
-#include <entt.hpp>
+#include <entt/entt.hpp>
 
 #include "CollisionDetectionEngine.h"
 #include "PhysicsStructures.h"
@@ -230,7 +230,7 @@ namespace tnah::Physics
         rp3d::PhysicsWorld* m_PhysicsWorld = nullptr;
 
         /** @brief	Pointer to physics logger */
-        rp3d::DefaultLogger* m_PhysicsLogger = nullptr;
+        //rp3d::DefaultLogger* m_PhysicsLogger = nullptr;
 
         /** @brief	True to collider render */
         bool m_ColliderRender = false;

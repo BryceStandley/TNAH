@@ -310,9 +310,9 @@ namespace tnah {
 			glTexImage2D(GL_TEXTURE_CUBE_MAP_POSITIVE_Z, 0, GL_RGB, size, size, 0, GL_RGB, GL_UNSIGNED_BYTE, dataFront->m_ImageData);
 			glTexImage2D(GL_TEXTURE_CUBE_MAP_NEGATIVE_Z, 0, GL_RGB, size, size, 0, GL_RGB, GL_UNSIGNED_BYTE, dataBack->m_ImageData);
 			*/
-			GLenum target, error;
-			ktxTexture_GLUpload(dataCubemap->GetKtxData(), &m_RendererID, &target, &error);
-			dataCubemap->Free(dataCubemap->GetKtxData());
+			//GLenum target, error;
+			//ktxTexture_GLUpload(dataCubemap->GetKtxData(), &m_RendererID, &target, &error);
+			//dataCubemap->Free(dataCubemap->GetKtxData());
 			
 			//glGenerateMipmap(GL_TEXTURE_CUBE_MAP);
 		}

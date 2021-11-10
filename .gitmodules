@@ -1,31 +1,30 @@
-[submodule "vender/glm"]
-	path = vender/glm
+[submodule "vendor/glm"]
+	path = vendor/glm
 	url = https://github.com/g-truc/glm.git
-[submodule "vender/glfw"]
-	path = vender/glfw
+[submodule "vendor/glfw"]
+	path = vendor/glfw
 	url = https://github.com/glfw/glfw.git
-[submodule "vender/reactphysics3d"]
-	path = vender/reactphysics3d
-	url = https://github.com/DanielChappuis/reactphysics3d.git
-	branch = develop
-[submodule "vender/imgui"]
-	path = vender/imgui
-	url = https://github.com/ocornut/imgui.git
-[submodule "vender/ImGuizmo"]
-	path = vender/ImGuizmo
-	url = https://github.com/CedricGuillemet/ImGuizmo.git
-[submodule "vender/assimp"]
-	path = vender/assimp
+[submodule "vendor/assimp"]
+	path = vendor/assimp
 	url = https://github.com/assimp/assimp.git
-[submodule "vender/entt"]
-	path = vender/entt
+[submodule "vendor/entt"]
+	path = vendor/entt
 	url = https://github.com/skypjack/entt.git
-[submodule "vender/spdlog"]
-	path = vender/spdlog
-	url = https://github.com/gabime/spdlog.git
-[submodule "vender/ktx"]
-	path = vender/ktx
+[submodule "vendor/ktx"]
+	path = vendor/ktx
 	url = https://github.com/KhronosGroup/KTX-Software.git
-[submodule "vender/miniaudio"]
-	path = vender/miniaudio
+[submodule "vendor/miniaudio"]
+	path = vendor/miniaudio
 	url = https://github.com/mackron/miniaudio.git
+[submodule "vendor/imgui-base/imgui"]
+	path = vendor/imgui-base/imgui
+	url = https://github.com/ocornut/imgui.git
+[submodule "vendor/ImGuizmo-base/ImGuizmo"]
+	path = vendor/ImGuizmo-base/ImGuizmo
+	url = https://github.com/CedricGuillemet/ImGuizmo.git
+[submodule "vendor/spdlog"]
+	path = vendor/spdlog
+	url = https://github.com/gabime/spdlog.git
+[submodule "vendor/reactphysics3d"]
+	path = vendor/reactphysics3d
+	url = https://github.com/DanielChappuis/reactphysics3d.git

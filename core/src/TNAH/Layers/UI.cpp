@@ -10,370 +10,370 @@
 //***************************************** Variable Controls ******************************************************************
 void tnah::UI::Entry(const char* format, ...)
 {
-    va_list args;
-    va_start(args, format);
-    ImGui::Text(format, args);
-    va_end(args);
+	va_list args;
+	va_start(args, format);
+	ImGui::Text(format, args);
+	va_end(args);
 }
 
 void tnah::UI::Entry(const std::string& text)
 {
-    ImGui::Text(text.c_str());
+	ImGui::Text(text.c_str());
 }
 
 void tnah::UI::Entry(const char* text, bool wrapped)
 {
-    if(wrapped)
-        ImGui::TextWrapped(text);
-    else
-        ImGui::Text(text);
+	if(wrapped)
+		ImGui::TextWrapped(text);
+	else
+		ImGui::Text(text);
 }
 
 void tnah::UI::Entry(const std::string& text, bool wrapped)
 {
-    if(wrapped)
-        ImGui::TextWrapped(text.c_str());
-    else
-        ImGui::Text(text.c_str());
+	if(wrapped)
+		ImGui::TextWrapped(text.c_str());
+	else
+		ImGui::Text(text.c_str());
 }
 
 bool tnah::UI::Entry(const char* label, std::string& value, bool readOnly, bool error)
 {
-    bool modified = false;
-    ImGui::Text(label);
-    ImGui::NextColumn();
-    ImGui::PushItemWidth(-1);
+	bool modified = false;
+	ImGui::Text(label);
+	ImGui::NextColumn();
+	ImGui::PushItemWidth(-1);
 
-    char buffer[256];
-    strcpy_s<256>(buffer, value.c_str());
+	char buffer[256];
+	strcpy_s<256>(buffer, value.c_str());
 
-    s_IDBuffer[0] = '#';
-    s_IDBuffer[1] = '#';
-    memset(s_IDBuffer + 2, 0, 14);
-    sprintf_s(s_IDBuffer + 2, 14, "%o", s_Counter++);
-    std::string name = "##";
-    name += label;
+	s_IDBuffer[0] = '#';
+	s_IDBuffer[1] = '#';
+	memset(s_IDBuffer + 2, 0, 14);
+	sprintf_s(s_IDBuffer + 2, 14, "%o", s_Counter++);
+	std::string name = "##";
+	name += label;
 		
-    const int flags = readOnly ? ImGuiInputTextFlags_ReadOnly : 0; 
+	const int flags = readOnly ? ImGuiInputTextFlags_ReadOnly : 0; 
 		
-    if (error)
-        ImGui::PushStyleColor(ImGuiCol_Text, ImVec4(0.9f, 0.2f, 0.2f, 1.0f));
-    if (ImGui::InputText(name.c_str(), buffer, 256, flags))
-    {
-        value = buffer;
-        modified = true;
-    }
-    if (error)
-        ImGui::PopStyleColor();
-    ImGui::PopItemWidth();
-    ImGui::NextColumn();
+	if (error)
+		ImGui::PushStyleColor(ImGuiCol_Text, ImVec4(0.9f, 0.2f, 0.2f, 1.0f));
+	if (ImGui::InputText(name.c_str(), buffer, 256, flags))
+	{
+		value = buffer;
+		modified = true;
+	}
+	if (error)
+		ImGui::PopStyleColor();
+	ImGui::PopItemWidth();
+	ImGui::NextColumn();
 
-    return modified;
+	return modified;
 }
 
 bool tnah::UI::Entry(const std::string& label, std::string& value, bool readOnly, bool error)
 {
-    return Entry(label.c_str(), value, readOnly, error);
+	return Entry(label.c_str(), value, readOnly, error);
 }
 
 bool tnah::UI::Entry(const char* label, float& value, bool readOnly, bool error)
 {
-    bool modified = false;
-    float temp = value;
-    ImGui::Text(label);
-    ImGui::NextColumn();
-    ImGui::PushItemWidth(-1);
+	bool modified = false;
+	float temp = value;
+	ImGui::Text(label);
+	ImGui::NextColumn();
+	ImGui::PushItemWidth(-1);
 
-    s_IDBuffer[0] = '#';
-    s_IDBuffer[1] = '#';
-    memset(s_IDBuffer + 2, 0, 14);
-    sprintf_s(s_IDBuffer + 2, 14, "%o", s_Counter++);
-    std::string name = "##";
-    name += label;
+	s_IDBuffer[0] = '#';
+	s_IDBuffer[1] = '#';
+	memset(s_IDBuffer + 2, 0, 14);
+	sprintf_s(s_IDBuffer + 2, 14, "%o", s_Counter++);
+	std::string name = "##";
+	name += label;
 		
-    const int flags = readOnly ? ImGuiInputTextFlags_ReadOnly : 0; 
+	const int flags = readOnly ? ImGuiInputTextFlags_ReadOnly : 0; 
 		
-    if (error)
-        ImGui::PushStyleColor(ImGuiCol_Text, ImVec4(0.9f, 0.2f, 0.2f, 1.0f));
-    if (ImGui::InputFloat(name.c_str(), &temp, 0, 0, "%.3f", flags))
-    {
-        value = temp;
-        modified = true;
-    }
-    if (error)
-        ImGui::PopStyleColor();
-    ImGui::PopItemWidth();
-    ImGui::NextColumn();
+	if (error)
+		ImGui::PushStyleColor(ImGuiCol_Text, ImVec4(0.9f, 0.2f, 0.2f, 1.0f));
+	if (ImGui::InputFloat(name.c_str(), &temp, 0, 0, "%.3f", flags))
+	{
+		value = temp;
+		modified = true;
+	}
+	if (error)
+		ImGui::PopStyleColor();
+	ImGui::PopItemWidth();
+	ImGui::NextColumn();
 
-    return modified;
+	return modified;
 }
 
 bool tnah::UI::Entry(std::string& label, float& value, bool readOnly, bool error)
 {
-    return Entry(label.c_str(), value, readOnly, error);
+	return Entry(label.c_str(), value, readOnly, error);
 }
 
 bool tnah::UI::Entry(const char* label, int& value, bool readOnly, bool error)
 {
-    bool modified = false;
-    int temp = value;
-    ImGui::Text(label);
-    ImGui::NextColumn();
-    ImGui::PushItemWidth(-1);
+	bool modified = false;
+	int temp = value;
+	ImGui::Text(label);
+	ImGui::NextColumn();
+	ImGui::PushItemWidth(-1);
 
-    s_IDBuffer[0] = '#';
-    s_IDBuffer[1] = '#';
-    memset(s_IDBuffer + 2, 0, 14);
-    sprintf_s(s_IDBuffer + 2, 14, "%o", s_Counter++);
-    std::string name = "##";
-    name += label;
+	s_IDBuffer[0] = '#';
+	s_IDBuffer[1] = '#';
+	memset(s_IDBuffer + 2, 0, 14);
+	sprintf_s(s_IDBuffer + 2, 14, "%o", s_Counter++);
+	std::string name = "##";
+	name += label;
 		
-    const int flags = readOnly ? ImGuiInputTextFlags_ReadOnly : 0; 
+	const int flags = readOnly ? ImGuiInputTextFlags_ReadOnly : 0; 
 		
-    if (error)
-        ImGui::PushStyleColor(ImGuiCol_Text, ImVec4(0.9f, 0.2f, 0.2f, 1.0f));
-    if (ImGui::InputInt(name.c_str(), &temp, 0, 0, flags))
-    {
-        value = temp;
-        modified = true;
-    }
-    if (error)
-        ImGui::PopStyleColor();
-    ImGui::PopItemWidth();
-    ImGui::NextColumn();
+	if (error)
+		ImGui::PushStyleColor(ImGuiCol_Text, ImVec4(0.9f, 0.2f, 0.2f, 1.0f));
+	if (ImGui::InputInt(name.c_str(), &temp, 0, 0, flags))
+	{
+		value = temp;
+		modified = true;
+	}
+	if (error)
+		ImGui::PopStyleColor();
+	ImGui::PopItemWidth();
+	ImGui::NextColumn();
 
-    return modified;
+	return modified;
 }
 
 bool tnah::UI::Entry(std::string& label, int& value, bool readOnly, bool error)
 {
-    return Entry(label.c_str(), value, readOnly, error);
+	return Entry(label.c_str(), value, readOnly, error);
 }
 
 bool tnah::UI::Entry(const char* label, bool& value, bool readOnly)
 {
-    return EntryCheckbox(label, value, readOnly);
+	return EntryCheckbox(label, value, readOnly);
 }
 
 bool tnah::UI::Entry(std::string& label, bool& value, bool readOnly)
 {
-    return EntryCheckbox(label.c_str(), value, readOnly);
+	return EntryCheckbox(label.c_str(), value, readOnly);
 }
 
 bool tnah::UI::Entry(const char* label, glm::vec2& value, bool readOnly, float resetValue)
 {
-    bool modified = false;
-    ImGui::Columns(2);
-    ImGui::SetColumnWidth(0, 100.0f);
-    ImGui::Text(label);
-    ImGui::NextColumn();
-    
-    if(!readOnly) modified |= ImGui::InputFloat2("##XY", glm::value_ptr(value));
-    else ImGui::InputFloat2("##XY", glm::value_ptr(value), "%.3f", ImGuiInputTextFlags_ReadOnly);
+	bool modified = false;
+	ImGui::Columns(2);
+	ImGui::SetColumnWidth(0, 100.0f);
+	ImGui::Text(label);
+	ImGui::NextColumn();
+	
+	if(!readOnly) modified |= ImGui::InputFloat2("##XY", glm::value_ptr(value));
+	else ImGui::InputFloat2("##XY", glm::value_ptr(value), "%.3f", ImGuiInputTextFlags_ReadOnly);
 
-    if(!readOnly)
-    {
-        const ImGuiIO& io = ImGui::GetIO();
-        auto boldFont = io.Fonts->Fonts[0];
-        ImGui::PushMultiItemsWidths(2, ImGui::CalcItemWidth());
-        ImGui::PushStyleVar(ImGuiStyleVar_ItemSpacing, ImVec2{ 0, 0 });
-        float lineHeight = GImGui->Font->FontSize + GImGui->Style.FramePadding.y * 2.0f;
-        ImVec2 buttonSize = { lineHeight + 3.0f, lineHeight };
+	if(!readOnly)
+	{
+		const ImGuiIO& io = ImGui::GetIO();
+		auto boldFont = io.Fonts->Fonts[0];
+		ImGui::PushMultiItemsWidths(2, ImGui::CalcItemWidth());
+		ImGui::PushStyleVar(ImGuiStyleVar_ItemSpacing, ImVec2{ 0, 0 });
+		float lineHeight = GImGui->Font->FontSize + GImGui->Style.FramePadding.y * 2.0f;
+		ImVec2 buttonSize = { lineHeight + 3.0f, lineHeight };
 
-        ImGui::PushStyleColor(ImGuiCol_Button, ImVec4{ 0.8f, 0.1f, 0.15f, 1.0f });
-        ImGui::PushStyleColor(ImGuiCol_ButtonHovered, ImVec4{ 0.9f, 0.2f, 0.2f, 1.0f });
-        ImGui::PushStyleColor(ImGuiCol_ButtonActive, ImVec4{ 0.8f, 0.1f, 0.15f, 1.0f });
-        ImGui::PushFont(boldFont);
-        ImGui::SameLine();
-        if(ImGui::Button("Reset", buttonSize))
-        {
-            value = {resetValue, resetValue};
-            modified = true;
-        }
-    }
-    ImGui::PopFont();
-    ImGui::PopStyleColor(3);
-    
-    return modified;
+		ImGui::PushStyleColor(ImGuiCol_Button, ImVec4{ 0.8f, 0.1f, 0.15f, 1.0f });
+		ImGui::PushStyleColor(ImGuiCol_ButtonHovered, ImVec4{ 0.9f, 0.2f, 0.2f, 1.0f });
+		ImGui::PushStyleColor(ImGuiCol_ButtonActive, ImVec4{ 0.8f, 0.1f, 0.15f, 1.0f });
+		ImGui::PushFont(boldFont);
+		ImGui::SameLine();
+		if(ImGui::Button("Reset", buttonSize))
+		{
+			value = {resetValue, resetValue};
+			modified = true;
+		}
+	}
+	ImGui::PopFont();
+	ImGui::PopStyleColor(3);
+	
+	return modified;
 }
 
 bool tnah::UI::Entry(std::string& label, glm::vec2& value, bool readOnly, float resetValue)
 {
-    return Entry(label.c_str(), value, readOnly, resetValue);
+	return Entry(label.c_str(), value, readOnly, resetValue);
 }
 
 bool tnah::UI::Entry(const char* label, glm::vec3& value, bool readOnly, float resetValue)
 {
-    bool modified = false;
-    ImGui::Columns(2);
-    ImGui::SetColumnWidth(0, 100.0f);
-    ImGui::Text(label);
-    ImGui::NextColumn();
-    
-    if(!readOnly) modified |= ImGui::InputFloat3("##XYZ", glm::value_ptr(value));
-    else ImGui::InputFloat3("##XYZ", glm::value_ptr(value), "%.3f", ImGuiInputTextFlags_ReadOnly);
+	bool modified = false;
+	ImGui::Columns(2);
+	ImGui::SetColumnWidth(0, 100.0f);
+	ImGui::Text(label);
+	ImGui::NextColumn();
+	
+	if(!readOnly) modified |= ImGui::InputFloat3("##XYZ", glm::value_ptr(value));
+	else ImGui::InputFloat3("##XYZ", glm::value_ptr(value), "%.3f", ImGuiInputTextFlags_ReadOnly);
 
-    if(!readOnly)
-    {
-        const ImGuiIO& io = ImGui::GetIO();
-        auto boldFont = io.Fonts->Fonts[0];
-        ImGui::PushMultiItemsWidths(2, ImGui::CalcItemWidth());
-        ImGui::PushStyleVar(ImGuiStyleVar_ItemSpacing, ImVec2{ 0, 0 });
-        float lineHeight = GImGui->Font->FontSize + GImGui->Style.FramePadding.y * 2.0f;
-        ImVec2 buttonSize = { lineHeight + 3.0f, lineHeight };
+	if(!readOnly)
+	{
+		const ImGuiIO& io = ImGui::GetIO();
+		auto boldFont = io.Fonts->Fonts[0];
+		ImGui::PushMultiItemsWidths(2, ImGui::CalcItemWidth());
+		ImGui::PushStyleVar(ImGuiStyleVar_ItemSpacing, ImVec2{ 0, 0 });
+		float lineHeight = GImGui->Font->FontSize + GImGui->Style.FramePadding.y * 2.0f;
+		ImVec2 buttonSize = { lineHeight + 3.0f, lineHeight };
 
-        ImGui::PushStyleColor(ImGuiCol_Button, ImVec4{ 0.8f, 0.1f, 0.15f, 1.0f });
-        ImGui::PushStyleColor(ImGuiCol_ButtonHovered, ImVec4{ 0.9f, 0.2f, 0.2f, 1.0f });
-        ImGui::PushStyleColor(ImGuiCol_ButtonActive, ImVec4{ 0.8f, 0.1f, 0.15f, 1.0f });
-        ImGui::PushFont(boldFont);
-        ImGui::SameLine();
-        if(ImGui::Button("Reset", buttonSize))
-        {
-            value = {resetValue, resetValue, resetValue};
-            modified = true;
-        }
-    }
-    ImGui::PopFont();
-    ImGui::PopStyleColor(3);
-    
-    return modified;
+		ImGui::PushStyleColor(ImGuiCol_Button, ImVec4{ 0.8f, 0.1f, 0.15f, 1.0f });
+		ImGui::PushStyleColor(ImGuiCol_ButtonHovered, ImVec4{ 0.9f, 0.2f, 0.2f, 1.0f });
+		ImGui::PushStyleColor(ImGuiCol_ButtonActive, ImVec4{ 0.8f, 0.1f, 0.15f, 1.0f });
+		ImGui::PushFont(boldFont);
+		ImGui::SameLine();
+		if(ImGui::Button("Reset", buttonSize))
+		{
+			value = {resetValue, resetValue, resetValue};
+			modified = true;
+		}
+	}
+	ImGui::PopFont();
+	ImGui::PopStyleColor(3);
+	
+	return modified;
 }
 
 bool tnah::UI::Entry(std::string& label, glm::vec3& value, bool readOnly, float resetValue)
 {
-    return Entry(label.c_str(), value, readOnly, resetValue);
+	return Entry(label.c_str(), value, readOnly, resetValue);
 }
 
 bool tnah::UI::Entry(const char* label, glm::vec4& value, bool readOnly, float resetValue)
 {
-    bool modified = false;
-    ImGui::Columns(2);
-    ImGui::SetColumnWidth(0, 100.0f);
-    ImGui::Text(label);
-    ImGui::NextColumn();
-    
-    if(!readOnly) modified |= ImGui::InputFloat4("##XYZW", glm::value_ptr(value));
-    else ImGui::InputFloat4("##XYZW", glm::value_ptr(value), "%.3f", ImGuiInputTextFlags_ReadOnly);
+	bool modified = false;
+	ImGui::Columns(2);
+	ImGui::SetColumnWidth(0, 100.0f);
+	ImGui::Text(label);
+	ImGui::NextColumn();
+	
+	if(!readOnly) modified |= ImGui::InputFloat4("##XYZW", glm::value_ptr(value));
+	else ImGui::InputFloat4("##XYZW", glm::value_ptr(value), "%.3f", ImGuiInputTextFlags_ReadOnly);
 
-    if(!readOnly)
-    {
-        const ImGuiIO& io = ImGui::GetIO();
-        auto boldFont = io.Fonts->Fonts[0];
-        ImGui::PushMultiItemsWidths(2, ImGui::CalcItemWidth());
-        ImGui::PushStyleVar(ImGuiStyleVar_ItemSpacing, ImVec2{ 0, 0 });
-        float lineHeight = GImGui->Font->FontSize + GImGui->Style.FramePadding.y * 2.0f;
-        ImVec2 buttonSize = { lineHeight + 3.0f, lineHeight };
+	if(!readOnly)
+	{
+		const ImGuiIO& io = ImGui::GetIO();
+		auto boldFont = io.Fonts->Fonts[0];
+		ImGui::PushMultiItemsWidths(2, ImGui::CalcItemWidth());
+		ImGui::PushStyleVar(ImGuiStyleVar_ItemSpacing, ImVec2{ 0, 0 });
+		float lineHeight = GImGui->Font->FontSize + GImGui->Style.FramePadding.y * 2.0f;
+		ImVec2 buttonSize = { lineHeight + 3.0f, lineHeight };
 
-        ImGui::PushStyleColor(ImGuiCol_Button, ImVec4{ 0.8f, 0.1f, 0.15f, 1.0f });
-        ImGui::PushStyleColor(ImGuiCol_ButtonHovered, ImVec4{ 0.9f, 0.2f, 0.2f, 1.0f });
-        ImGui::PushStyleColor(ImGuiCol_ButtonActive, ImVec4{ 0.8f, 0.1f, 0.15f, 1.0f });
-        ImGui::PushFont(boldFont);
-        ImGui::SameLine();
-        if(ImGui::Button("Reset", buttonSize))
-        {
-            value = {resetValue, resetValue, resetValue, resetValue};
-            modified = true;
-        }
-    }
-    ImGui::PopFont();
-    ImGui::PopStyleColor(3);
-    
-    return modified;
+		ImGui::PushStyleColor(ImGuiCol_Button, ImVec4{ 0.8f, 0.1f, 0.15f, 1.0f });
+		ImGui::PushStyleColor(ImGuiCol_ButtonHovered, ImVec4{ 0.9f, 0.2f, 0.2f, 1.0f });
+		ImGui::PushStyleColor(ImGuiCol_ButtonActive, ImVec4{ 0.8f, 0.1f, 0.15f, 1.0f });
+		ImGui::PushFont(boldFont);
+		ImGui::SameLine();
+		if(ImGui::Button("Reset", buttonSize))
+		{
+			value = {resetValue, resetValue, resetValue, resetValue};
+			modified = true;
+		}
+	}
+	ImGui::PopFont();
+	ImGui::PopStyleColor(3);
+	
+	return modified;
 }
 
 bool tnah::UI::Entry(std::string& label, glm::vec4& value, bool readOnly, float resetValue)
 {
-    return Entry(label.c_str(), value, readOnly, resetValue);
+	return Entry(label.c_str(), value, readOnly, resetValue);
 }
 
 //***************************************** Slider Controls ******************************************************************
 bool tnah::UI::EntrySlider(const char* label, int& value, bool readOnly, int min, int max, int resetValue)
 {
-    bool modified = false;
-    ImGui::Columns(2);
-    ImGui::SetColumnWidth(0, 100.0f);
-    ImGui::Text(label);
-    ImGui::NextColumn();
-    
-    if(!readOnly) modified |= ImGui::SliderInt("##V", &value, min, max);
-    else ImGui::SliderInt("##V", &value, min,max, "%d", ImGuiInputTextFlags_ReadOnly);
+	bool modified = false;
+	ImGui::Columns(2);
+	ImGui::SetColumnWidth(0, 100.0f);
+	ImGui::Text(label);
+	ImGui::NextColumn();
+	
+	if(!readOnly) modified |= ImGui::SliderInt("##V", &value, min, max);
+	else ImGui::SliderInt("##V", &value, min,max, "%d", ImGuiInputTextFlags_ReadOnly);
 
-    if(!readOnly)
-    {
-        const ImGuiIO& io = ImGui::GetIO();
-        auto boldFont = io.Fonts->Fonts[0];
-        ImGui::PushMultiItemsWidths(2, ImGui::CalcItemWidth());
-        ImGui::PushStyleVar(ImGuiStyleVar_ItemSpacing, ImVec2{ 0, 0 });
-        float lineHeight = GImGui->Font->FontSize + GImGui->Style.FramePadding.y * 2.0f;
-        ImVec2 buttonSize = { lineHeight + 3.0f, lineHeight };
+	if(!readOnly)
+	{
+		const ImGuiIO& io = ImGui::GetIO();
+		auto boldFont = io.Fonts->Fonts[0];
+		ImGui::PushMultiItemsWidths(2, ImGui::CalcItemWidth());
+		ImGui::PushStyleVar(ImGuiStyleVar_ItemSpacing, ImVec2{ 0, 0 });
+		float lineHeight = GImGui->Font->FontSize + GImGui->Style.FramePadding.y * 2.0f;
+		ImVec2 buttonSize = { lineHeight + 3.0f, lineHeight };
 
-        ImGui::PushStyleColor(ImGuiCol_Button, ImVec4{ 0.8f, 0.1f, 0.15f, 1.0f });
-        ImGui::PushStyleColor(ImGuiCol_ButtonHovered, ImVec4{ 0.9f, 0.2f, 0.2f, 1.0f });
-        ImGui::PushStyleColor(ImGuiCol_ButtonActive, ImVec4{ 0.8f, 0.1f, 0.15f, 1.0f });
-        ImGui::PushFont(boldFont);
-        ImGui::SameLine();
-        if(ImGui::Button("Reset", buttonSize))
-        {
-            value = resetValue;
-            modified = true;
-        }
-    }
-    ImGui::PopFont();
-    ImGui::PopStyleColor(3);
-    
-    return modified;
+		ImGui::PushStyleColor(ImGuiCol_Button, ImVec4{ 0.8f, 0.1f, 0.15f, 1.0f });
+		ImGui::PushStyleColor(ImGuiCol_ButtonHovered, ImVec4{ 0.9f, 0.2f, 0.2f, 1.0f });
+		ImGui::PushStyleColor(ImGuiCol_ButtonActive, ImVec4{ 0.8f, 0.1f, 0.15f, 1.0f });
+		ImGui::PushFont(boldFont);
+		ImGui::SameLine();
+		if(ImGui::Button("Reset", buttonSize))
+		{
+			value = resetValue;
+			modified = true;
+		}
+	}
+	ImGui::PopFont();
+	ImGui::PopStyleColor(3);
+	
+	return modified;
 }
 
 bool tnah::UI::EntrySlider(const std::string& label, int& value, bool readOnly, int min, int max , int resetValue)
 {
-    return EntrySlider(label.c_str(), value, readOnly, min, max, resetValue);
+	return EntrySlider(label.c_str(), value, readOnly, min, max, resetValue);
 }
 
 bool tnah::UI::EntrySlider(const char* label, float& value, bool readOnly, float min, float max, float resetValue)
 {
-    bool modified = false;
-    ImGui::Columns(2);
-    ImGui::SetColumnWidth(0, 100.0f);
-    ImGui::Text(label);
-    ImGui::NextColumn();
-    
-    if(!readOnly) modified |= ImGui::SliderFloat("##V", &value, min, max);
-    else ImGui::SliderFloat("##V", &value, min,max, "%d", ImGuiInputTextFlags_ReadOnly);
+	bool modified = false;
+	ImGui::Columns(2);
+	ImGui::SetColumnWidth(0, 100.0f);
+	ImGui::Text(label);
+	ImGui::NextColumn();
+	
+	if(!readOnly) modified |= ImGui::SliderFloat("##V", &value, min, max);
+	else ImGui::SliderFloat("##V", &value, min,max, "%d", ImGuiInputTextFlags_ReadOnly);
 
-    if(!readOnly)
-    {
-        const ImGuiIO& io = ImGui::GetIO();
-        auto boldFont = io.Fonts->Fonts[0];
-        ImGui::PushMultiItemsWidths(2, ImGui::CalcItemWidth());
-        ImGui::PushStyleVar(ImGuiStyleVar_ItemSpacing, ImVec2{ 0, 0 });
-        float lineHeight = GImGui->Font->FontSize + GImGui->Style.FramePadding.y * 2.0f;
-        ImVec2 buttonSize = { lineHeight + 3.0f, lineHeight };
+	if(!readOnly)
+	{
+		const ImGuiIO& io = ImGui::GetIO();
+		auto boldFont = io.Fonts->Fonts[0];
+		ImGui::PushMultiItemsWidths(2, ImGui::CalcItemWidth());
+		ImGui::PushStyleVar(ImGuiStyleVar_ItemSpacing, ImVec2{ 0, 0 });
+		float lineHeight = GImGui->Font->FontSize + GImGui->Style.FramePadding.y * 2.0f;
+		ImVec2 buttonSize = { lineHeight + 3.0f, lineHeight };
 
-        ImGui::PushStyleColor(ImGuiCol_Button, ImVec4{ 0.8f, 0.1f, 0.15f, 1.0f });
-        ImGui::PushStyleColor(ImGuiCol_ButtonHovered, ImVec4{ 0.9f, 0.2f, 0.2f, 1.0f });
-        ImGui::PushStyleColor(ImGuiCol_ButtonActive, ImVec4{ 0.8f, 0.1f, 0.15f, 1.0f });
-        ImGui::PushFont(boldFont);
-        ImGui::SameLine();
-        if(ImGui::Button("Reset", buttonSize))
-        {
-            value = resetValue;
-            modified = true;
-        }
-    }
-    ImGui::PopFont();
-    ImGui::PopStyleColor(3);
-    
-    return modified;
+		ImGui::PushStyleColor(ImGuiCol_Button, ImVec4{ 0.8f, 0.1f, 0.15f, 1.0f });
+		ImGui::PushStyleColor(ImGuiCol_ButtonHovered, ImVec4{ 0.9f, 0.2f, 0.2f, 1.0f });
+		ImGui::PushStyleColor(ImGuiCol_ButtonActive, ImVec4{ 0.8f, 0.1f, 0.15f, 1.0f });
+		ImGui::PushFont(boldFont);
+		ImGui::SameLine();
+		if(ImGui::Button("Reset", buttonSize))
+		{
+			value = resetValue;
+			modified = true;
+		}
+	}
+	ImGui::PopFont();
+	ImGui::PopStyleColor(3);
+	
+	return modified;
 }
 
 bool tnah::UI::EntrySlider(const std::string& label, float& value,bool readOnly, float min, float max, float resetValue)
 {
-    return EntrySlider(label.c_str(), value, readOnly, min, max, resetValue);
+	return EntrySlider(label.c_str(), value, readOnly, min, max, resetValue);
 }
 
 bool tnah::UI::EntrySlider(const char* label, glm::vec2& value,bool readOnly, float min, float max, float resetValue)
 {
-     bool modified = false;
+	 bool modified = false;
 
 		const ImGuiIO& io = ImGui::GetIO();
 		auto boldFont = io.Fonts->Fonts[0];
@@ -438,12 +438,12 @@ bool tnah::UI::EntrySlider(const char* label, glm::vec2& value,bool readOnly, fl
 
 bool tnah::UI::EntrySlider(const std::string& label, glm::vec2& value,bool readOnly, float min, float max, float resetValue)
 {
-    return EntrySlider(label.c_str(), value, readOnly, min, max, resetValue);
+	return EntrySlider(label.c_str(), value, readOnly, min, max, resetValue);
 }
 
 bool tnah::UI::EntrySlider(const char* label, glm::vec3& value,bool readOnly, float min, float max, float resetValue)
 {
-    bool modified = false;
+	bool modified = false;
 
 		const ImGuiIO& io = ImGui::GetIO();
 		auto boldFont = io.Fonts->Fonts[0];
@@ -534,7 +534,7 @@ bool tnah::UI::EntrySlider(const std::string& label, glm::vec3& value,bool readO
 
 bool tnah::UI::EntrySlider(const char* label, glm::vec4& value,bool readOnly, float min, float max, float resetValue)
 {
-    bool modified = false;
+	bool modified = false;
 
 		const ImGuiIO& io = ImGui::GetIO();
 		auto boldFont = io.Fonts->Fonts[0];
@@ -638,7 +638,7 @@ bool tnah::UI::EntrySlider(const char* label, glm::vec4& value,bool readOnly, fl
 
 bool tnah::UI::EntrySlider(const std::string& label, glm::vec4& value,bool readOnly, float min, float max, float resetValue)
 {
-    return EntrySlider(label.c_str(), value, readOnly, min, max, resetValue);
+	return EntrySlider(label.c_str(), value, readOnly, min, max, resetValue);
 }
 
 
@@ -646,91 +646,91 @@ bool tnah::UI::EntrySlider(const std::string& label, glm::vec4& value,bool readO
 
 bool tnah::UI::EntryDrag(const char* label, int& value, bool readOnly, int speed, int min, int max, int resetValue)
 {
-    bool modified = false;
-    ImGui::Columns(2);
-    ImGui::SetColumnWidth(0, 100.0f);
-    ImGui::Text(label);
-    ImGui::NextColumn();
-    
-    if(!readOnly) modified |= ImGui::SliderInt("##V", &value, min, max);
-    else ImGui::DragInt("##V", &value, speed, min,max, "%d", ImGuiInputTextFlags_ReadOnly);
+	bool modified = false;
+	ImGui::Columns(2);
+	ImGui::SetColumnWidth(0, 100.0f);
+	ImGui::Text(label);
+	ImGui::NextColumn();
+	
+	if(!readOnly) modified |= ImGui::SliderInt("##V", &value, min, max);
+	else ImGui::DragInt("##V", &value, speed, min,max, "%d", ImGuiInputTextFlags_ReadOnly);
 
-    if(!readOnly)
-    {
-        const ImGuiIO& io = ImGui::GetIO();
-        auto boldFont = io.Fonts->Fonts[0];
-        ImGui::PushMultiItemsWidths(2, ImGui::CalcItemWidth());
-        ImGui::PushStyleVar(ImGuiStyleVar_ItemSpacing, ImVec2{ 0, 0 });
-        float lineHeight = GImGui->Font->FontSize + GImGui->Style.FramePadding.y * 2.0f;
-        ImVec2 buttonSize = { lineHeight + 3.0f, lineHeight };
+	if(!readOnly)
+	{
+		const ImGuiIO& io = ImGui::GetIO();
+		auto boldFont = io.Fonts->Fonts[0];
+		ImGui::PushMultiItemsWidths(2, ImGui::CalcItemWidth());
+		ImGui::PushStyleVar(ImGuiStyleVar_ItemSpacing, ImVec2{ 0, 0 });
+		float lineHeight = GImGui->Font->FontSize + GImGui->Style.FramePadding.y * 2.0f;
+		ImVec2 buttonSize = { lineHeight + 3.0f, lineHeight };
 
-        ImGui::PushStyleColor(ImGuiCol_Button, ImVec4{ 0.8f, 0.1f, 0.15f, 1.0f });
-        ImGui::PushStyleColor(ImGuiCol_ButtonHovered, ImVec4{ 0.9f, 0.2f, 0.2f, 1.0f });
-        ImGui::PushStyleColor(ImGuiCol_ButtonActive, ImVec4{ 0.8f, 0.1f, 0.15f, 1.0f });
-        ImGui::PushFont(boldFont);
-        ImGui::SameLine();
-        if(ImGui::Button("Reset", buttonSize))
-        {
-            value = resetValue;
-            modified = true;
-        }
-    }
-    ImGui::PopFont();
-    ImGui::PopStyleColor(3);
-    
-    return modified;
+		ImGui::PushStyleColor(ImGuiCol_Button, ImVec4{ 0.8f, 0.1f, 0.15f, 1.0f });
+		ImGui::PushStyleColor(ImGuiCol_ButtonHovered, ImVec4{ 0.9f, 0.2f, 0.2f, 1.0f });
+		ImGui::PushStyleColor(ImGuiCol_ButtonActive, ImVec4{ 0.8f, 0.1f, 0.15f, 1.0f });
+		ImGui::PushFont(boldFont);
+		ImGui::SameLine();
+		if(ImGui::Button("Reset", buttonSize))
+		{
+			value = resetValue;
+			modified = true;
+		}
+	}
+	ImGui::PopFont();
+	ImGui::PopStyleColor(3);
+	
+	return modified;
 }
 
 bool tnah::UI::EntryDrag(const std::string& label, int& value, bool readOnly, int speed, int min, int max, int resetValue)
 {
-    return EntryDrag(label.c_str(), value, readOnly, speed, min, max, resetValue);
+	return EntryDrag(label.c_str(), value, readOnly, speed, min, max, resetValue);
 }
 
 bool tnah::UI::EntryDrag(const char* label, float& value, bool readOnly, float speed, float min, float max, float resetValue)
 {
-    bool modified = false;
-    ImGui::Columns(2);
-    ImGui::SetColumnWidth(0, 100.0f);
-    ImGui::Text(label);
-    ImGui::NextColumn();
-    
-    if(!readOnly) modified |= ImGui::DragFloat("##V", &value, speed, min, max);
-    else ImGui::DragFloat("##V", &value, speed, min,max, "%d", ImGuiInputTextFlags_ReadOnly);
+	bool modified = false;
+	ImGui::Columns(2);
+	ImGui::SetColumnWidth(0, 100.0f);
+	ImGui::Text(label);
+	ImGui::NextColumn();
+	
+	if(!readOnly) modified |= ImGui::DragFloat("##V", &value, speed, min, max);
+	else ImGui::DragFloat("##V", &value, speed, min,max, "%d", ImGuiInputTextFlags_ReadOnly);
 
-    if(!readOnly)
-    {
-        const ImGuiIO& io = ImGui::GetIO();
-        auto boldFont = io.Fonts->Fonts[0];
-        ImGui::PushMultiItemsWidths(2, ImGui::CalcItemWidth());
-        ImGui::PushStyleVar(ImGuiStyleVar_ItemSpacing, ImVec2{ 0, 0 });
-        float lineHeight = GImGui->Font->FontSize + GImGui->Style.FramePadding.y * 2.0f;
-        ImVec2 buttonSize = { lineHeight + 3.0f, lineHeight };
+	if(!readOnly)
+	{
+		const ImGuiIO& io = ImGui::GetIO();
+		auto boldFont = io.Fonts->Fonts[0];
+		ImGui::PushMultiItemsWidths(2, ImGui::CalcItemWidth());
+		ImGui::PushStyleVar(ImGuiStyleVar_ItemSpacing, ImVec2{ 0, 0 });
+		float lineHeight = GImGui->Font->FontSize + GImGui->Style.FramePadding.y * 2.0f;
+		ImVec2 buttonSize = { lineHeight + 3.0f, lineHeight };
 
-        ImGui::PushStyleColor(ImGuiCol_Button, ImVec4{ 0.8f, 0.1f, 0.15f, 1.0f });
-        ImGui::PushStyleColor(ImGuiCol_ButtonHovered, ImVec4{ 0.9f, 0.2f, 0.2f, 1.0f });
-        ImGui::PushStyleColor(ImGuiCol_ButtonActive, ImVec4{ 0.8f, 0.1f, 0.15f, 1.0f });
-        ImGui::PushFont(boldFont);
-        ImGui::SameLine();
-        if(ImGui::Button("Reset", buttonSize))
-        {
-            value = resetValue;
-            modified = true;
-        }
-    }
-    ImGui::PopFont();
-    ImGui::PopStyleColor(3);
-    
-    return modified;
+		ImGui::PushStyleColor(ImGuiCol_Button, ImVec4{ 0.8f, 0.1f, 0.15f, 1.0f });
+		ImGui::PushStyleColor(ImGuiCol_ButtonHovered, ImVec4{ 0.9f, 0.2f, 0.2f, 1.0f });
+		ImGui::PushStyleColor(ImGuiCol_ButtonActive, ImVec4{ 0.8f, 0.1f, 0.15f, 1.0f });
+		ImGui::PushFont(boldFont);
+		ImGui::SameLine();
+		if(ImGui::Button("Reset", buttonSize))
+		{
+			value = resetValue;
+			modified = true;
+		}
+	}
+	ImGui::PopFont();
+	ImGui::PopStyleColor(3);
+	
+	return modified;
 }
 
 bool tnah::UI::EntryDrag(const std::string& label, float& value,bool readOnly, float speed, float min, float max, float resetValue)
 {
-    return EntryDrag(label.c_str(), value, readOnly,speed, min, max, resetValue);
+	return EntryDrag(label.c_str(), value, readOnly,speed, min, max, resetValue);
 }
 
 bool tnah::UI::EntryDrag(const char* label, glm::vec2& value,bool readOnly, float speed, float min, float max, float resetValue)
 {
-     bool modified = false;
+	 bool modified = false;
 
 		const ImGuiIO& io = ImGui::GetIO();
 		auto boldFont = io.Fonts->Fonts[0];
@@ -795,12 +795,12 @@ bool tnah::UI::EntryDrag(const char* label, glm::vec2& value,bool readOnly, floa
 
 bool tnah::UI::EntryDrag(const std::string& label, glm::vec2& value,bool readOnly, float speed, float min, float max, float resetValue)
 {
-    return EntryDrag(label.c_str(), value, readOnly, speed, min, max, resetValue);
+	return EntryDrag(label.c_str(), value, readOnly, speed, min, max, resetValue);
 }
 
 bool tnah::UI::EntryDrag(const char* label, glm::vec3& value,bool readOnly, float speed, float min, float max, float resetValue)
 {
-    bool modified = false;
+	bool modified = false;
 
 		const ImGuiIO& io = ImGui::GetIO();
 		auto boldFont = io.Fonts->Fonts[0];
@@ -891,7 +891,7 @@ bool tnah::UI::EntryDrag(const std::string& label, glm::vec3& value,bool readOnl
 
 bool tnah::UI::EntryDrag(const char* label, glm::vec4& value,bool readOnly, float speed, float min, float max, float resetValue)
 {
-    bool modified = false;
+	bool modified = false;
 
 		const ImGuiIO& io = ImGui::GetIO();
 		auto boldFont = io.Fonts->Fonts[0];
@@ -995,7 +995,7 @@ bool tnah::UI::EntryDrag(const char* label, glm::vec4& value,bool readOnly, floa
 
 bool tnah::UI::EntryDrag(const std::string& label, glm::vec4& value,bool readOnly, float speed, float min, float max, float resetValue)
 {
-    return EntryDrag(label.c_str(), value, readOnly, speed, min, max, resetValue);
+	return EntryDrag(label.c_str(), value, readOnly, speed, min, max, resetValue);
 }
 
 
@@ -1131,13 +1131,13 @@ bool tnah::UI::EntryDropdown(const char* label, const char** options, uint32_t o
 }
 
 bool tnah::UI::EntryDropdown(const std::string& label, const char** options, uint32_t optionCount,
-    uint32_t* selectedOption)
+	uint32_t* selectedOption)
 {
 	return EntryDropdown(label.c_str(), options, optionCount, selectedOption);
 }
 
 bool tnah::UI::EntryDropdown(const char* label, const std::vector<std::string>& options, uint32_t optionCount,
-    uint32_t* selectedOption)
+	uint32_t* selectedOption)
 {
 	const char* current = options[*selectedOption].c_str();
 	ImGui::Text(label);
@@ -1171,7 +1171,7 @@ bool tnah::UI::EntryDropdown(const char* label, const std::vector<std::string>& 
 }
 
 bool tnah::UI::EntryDropdown(const std::string& label, const std::vector<std::string>& options, uint32_t optionCount,
-    uint32_t* selectedOption)
+	uint32_t* selectedOption)
 {
 	return EntryDropdown(label.c_str(), options, optionCount, selectedOption);
 }
@@ -1211,7 +1211,7 @@ void tnah::UI::Image(const Ref<Texture2D>& texture, const ImVec2& size, const Im
 }
 
 bool tnah::UI::ImageButton(const Ref<Texture2D>& texture, const ImVec2& size, const ImVec2& uv0, const ImVec2& uv1,
-    int frame_padding, const ImVec4& bg_color, const ImVec4& tint_color)
+	int frame_padding, const ImVec4& bg_color, const ImVec4& tint_color)
 {
 	return ImGui::ImageButton((ImTextureID)(size_t)texture->GetRendererID(), size, uv0, uv1, frame_padding, bg_color, tint_color);
 }

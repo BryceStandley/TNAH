@@ -14,17 +14,18 @@
 </a>
 </p>
 
-#
+---
 
 <p align="center">
     <a href="https://github.com/BryceStandley/TNAH/wiki/">Wiki</a> •
+    <a href="#goals">Goals</a> •
     <a href="https://brycestandley.github.io/TNAH/">Documentation</a> •
     <a href="https://github.com/BryceStandley/TNAH/wiki/Build">Build</a> •
     <a href="#dependencies">Dependencies</a> •
     <a href="https://github.com/BryceStandley/TNAH/LICENSE">License</a>
 </p>
 
-#
+---
 
 ## About
 
@@ -37,6 +38,17 @@ This project originally started development in early 2021 as a university projec
 ## Wiki
 
 Visit the [wiki](https://github.com/BryceStandley/TNAH/wiki) to read up on example applications, build instructions and much more! You can also visit our [Documentaion](https://brycestandley.github.io/TNAH/) page to view our [Doxygen](https://www.doxygen.nl/index.html) generated output.
+
+## Goals
+
+The goal of the TNAH engine is to provide a simple yet powerful application engine not only targeting game development but also any application you can think of! Some goals moving forward:
+
+1. Remove any unnecessary components originally created for the original university build.
+2. Remove frictionless collisions and revert back to using all of ReactPhysics3D for physics simulation.
+3. Major code clean up. (Many corners were cut when deadlines were approching)
+4. Transition the engine to a dynamic library for easy distribution/integration.
+5. Add proper application build runtimes.
+6. Rewrite a large portion of Doxygen comments.
 
 ## LFS
 

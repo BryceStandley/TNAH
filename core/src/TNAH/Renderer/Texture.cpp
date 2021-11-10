@@ -27,7 +27,9 @@ namespace tnah {
 	{
 		if(filePath.find(".ktx") != std::string::npos)
 		{
-			return LoadKTXImage(filePath, isCubemap);
+		    // TODO Fix KTX support with CMake
+            //return LoadKTXImage(filePath, isCubemap);
+            return nullptr;
 		}
 
 		return LoadSTBiImage(filePath, flipOnLoad);
@@ -35,6 +37,7 @@ namespace tnah {
 
 	Ref<Texture2D> Texture2D::LoadKTXImage(const std::string& filePath, const bool& isCubemap)
 	{
+#if 0
 		auto texture = Ref<Image>::Create();
 		texture->m_TextureResource = { filePath };
 		texture->m_LoadFormat = ImageLoadFormat::KTX;
@@ -59,10 +62,13 @@ namespace tnah {
 		}
 		
 		return texture;
+#endif
+		return nullptr;
 	}
 
 	std::string Texture2D::KtxErrorReason(const int& ktxError)
 	{
+#if 0
 		switch (auto error = static_cast<ktx_error_code_e>(ktxError))
 		{
 			case KTX_SUCCESS:  return "Operation was successful.";
@@ -86,6 +92,8 @@ namespace tnah {
 			case KTX_LIBRARY_NOT_LINKED: return "Library dependency (OpenGL or Vulkan) not linked into application.";
 			default: return "Not a KTX error code.";
 		}
+#endif
+        return "KTX Support Disabled";
 	}
 
 	Ref<Texture2D> Texture2D::LoadSTBiImage(const std::string& filePath, const bool& flipOnLoad)

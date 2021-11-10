@@ -1,7 +1,8 @@
 ﻿#pragma once
 #include "TNAH/Core/Core.h"
 #include "TNAH/Scene/Components/AudioComponents.h"
-#include "Platform/IrrKlang/Klang.h"
+#include "Platform/MiniAudio/MiniAudio.h"
+
 
 namespace tnah
 {
