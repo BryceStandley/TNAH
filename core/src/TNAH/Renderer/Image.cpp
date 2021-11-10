@@ -37,8 +37,8 @@ namespace tnah {
         {
             case ImageLoadFormat::KTX:
                 {
-                    ktxTexture* dataToFree = static_cast<ktxTexture*>(data);
-                    ktxTexture_Destroy(dataToFree);
+                    //ktxTexture* dataToFree = static_cast<ktxTexture*>(data);
+                    //ktxTexture_Destroy(dataToFree);
                     m_Loaded = false;
                     break;
                 }
@@ -58,7 +58,7 @@ namespace tnah {
     {
         if(m_LoadFormat == ImageLoadFormat::KTX)
         {
-            return static_cast<ktxTexture*>(m_ImageData);
+           // return static_cast<ktxTexture*>(m_ImageData);
         }
 
         return nullptr;
@@ -73,7 +73,7 @@ namespace tnah {
 
         if(m_LoadFormat == ImageLoadFormat::KTX)
         {
-            return ktxTexture_GetData(static_cast<ktxTexture*>(m_ImageData));
+            //return ktxTexture_GetData(static_cast<ktxTexture*>(m_ImageData));
         }
         
         return nullptr;

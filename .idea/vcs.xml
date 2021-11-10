@@ -2,6 +2,8 @@
 <project version="4">
   <component name="VcsDirectoryMappings">
     <mapping directory="$PROJECT_DIR$" vcs="Git" />
+    <mapping directory="$PROJECT_DIR$/out/build/x64-Debug/_deps/cpputest-src" vcs="Git" />
+    <mapping directory="$PROJECT_DIR$/out/build/x64-Debug/_deps/json-src" vcs="Git" />
     <mapping directory="$PROJECT_DIR$/vendor/ImGuizmo-base/ImGuizmo" vcs="Git" />
     <mapping directory="$PROJECT_DIR$/vendor/assimp" vcs="Git" />
     <mapping directory="$PROJECT_DIR$/vendor/entt" vcs="Git" />

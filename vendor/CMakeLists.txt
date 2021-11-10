@@ -17,23 +17,46 @@ add_compile_options(
         # Visual Studio
         $<$<CXX_COMPILER_ID:MSVC>:/W0>
 )
+message("GLM Compile Start")
 add_subdirectory(glm)
+message("GLM Compile Complete")
+
+message("Assimp Compile Start")
 add_subdirectory(assimp)
+message("Assimp Compile Complete")
+
+message("GLAD Compile Start")
 add_subdirectory(glad)
+message("GLAD Compile Complete")
+
+message("IMGUI Compile Start")
 add_subdirectory(imgui-base)
+message("IMGUI Compile Complete")
+
+message("REACTPHYSICS3D Compile Start")
 add_subdirectory(reactphysics3d)
+message("REACTPHYSICS3D Compile Complete")
+
+message("IMGUIZMO Compile Start")
 add_subdirectory(ImGuizmo-base)
+message("IMGUIZMO Compile Complete")
+
 option(GLFW_BUILD_DOCS OFF)
 option(GLFW_BUILD_TESTS OFF)
 option(GLFW_BUILD_EXAMPLES OFF)
+message("GLFW Compile Start")
 add_subdirectory(glfw)
-add_subdirectory(spdlog)
-#add_subdirectory(miniaudio)
-#add_subdirectory(entt)
+message("GLFW Compile Complete")
 
-option(KTX_FEATURE_VULKAN OFF)
-option(KTX_FEATURE_TESTS OFF)
+message("SPDLOG Compile Start")
+add_subdirectory(spdlog)
+message("SPDLOG Compile Complete")
+
+#option(KTX_FEATURE_VULKAN OFF)
+#option(KTX_FEATURE_TESTS OFF)
+#message("KTX Compile Start")
 #add_subdirectory(ktx)
+#message("KTX Compile Complete")
 
 #Temp
 add_subdirectory(irrklang)

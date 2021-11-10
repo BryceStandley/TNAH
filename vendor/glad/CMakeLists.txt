@@ -1,4 +1,3 @@
-message("glad started")
 project(glad LANGUAGES C)
 
 add_library(glad STATIC
@@ -10,4 +9,3 @@ add_library(glad STATIC
 target_compile_options(glad PRIVATE -fPIC)
 
 target_include_directories(glad PUBLIC include/)
-message("glad ended")

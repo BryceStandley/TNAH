@@ -109,7 +109,9 @@ target_sources(${PROJECT_NAME}
         Platform/OpenGL/OpenGLShader.cpp
         Platform/OpenGL/OpenGLTexture.cpp
         Platform/OpenGL/OpenGLVertexArray.cpp
-        Platform/IrrKlang/Klang.cpp
+
+        #Platform/IrrKlang/Klang.cpp
+        Platform/MiniAudio/MiniAudio.cpp
         )
 
 # Include project header files.
